@@ -1,3 +1,16 @@
+## Como rodar o projeto
+Instalar o Docker: https://docs.docker.com/desktop/install/windows-install/
+Dependendo do seu sistema operacional, você pode trocar por linux ou mac
+
+Para não ter problema com permissão, sempre execute o container com permissão de administrador, no caso do linux, use o sudo
+
+Como rodar no Linux (meu sistema operacional): sudo docker-compose up --build
+No Windows deve ser a mesma coisa, mas sem o sudo (mas deve-se iniciar o CMD/PowerShell como administrador)
+
+Usuário padrão:
+username: leadsoft
+password: softlead
+
 ## Backend
 
 ### Modelos de Dados
