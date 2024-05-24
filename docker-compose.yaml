@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "5173:5173"
+      - "5000:5000"
+    environment:
+      DB_USER: leadsoftteste
+      DB_PASSWORD: senha-leadsoft
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: leadsoftdb
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/frontend/node_modules
+      - /usr/src/app/backend/node_modules
+    depends_on:
+      - db
+    networks:
+      - leadsoft_teste_network
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: leadsoftteste
+      POSTGRES_PASSWORD: senha-leadsoft
+      POSTGRES_DB: leadsoftdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - /var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - leadsoft_teste_network
+
+networks:
+  leadsoft_teste_network:
