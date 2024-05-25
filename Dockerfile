@@ -17,8 +17,6 @@ RUN npm install
 WORKDIR /usr/src/app
 COPY . .
 
-RUN ls -la /usr/src/app/backend/routes/testeData.csv
-
 EXPOSE 5173 5000 5432
 
 CMD ["/bin/bash", "-c", "service postgresql start && cd /usr/src/app/backend && npm start & cd /usr/src/app/frontend && npm run dev"]
