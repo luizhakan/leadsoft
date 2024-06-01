@@ -46,7 +46,7 @@ const Header = () => {
         <div
           style={{ color: "#10D1E9", fontSize: "1.125rem", fontWeight: "bold" }}
         >
-          LeadSoft
+          LeadSoft - {localStorage.getItem("username")}
         </div>
         <div style={{ display: "flex", gap: "16px" }}>
           <a
