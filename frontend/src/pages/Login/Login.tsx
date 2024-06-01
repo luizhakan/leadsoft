@@ -26,6 +26,7 @@ const Login = () => {
         console.log(data.message);
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('username', username);
+        localStorage.setItem('role', data.role);
         window.location.href = '/';
       })
       .catch(error => {
